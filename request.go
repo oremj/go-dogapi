@@ -22,7 +22,7 @@ func (c *Client) makeJSONRequest(method, url string, body, res interface{}) erro
 
 	// Add api_key to URL
 	qs := req.URL.Query()
-	qs.Add("api_key", c.ApiKey)
+	qs.Add("api_key", c.APIKey)
 	if c.ApplicationKey != "" {
 		qs.Add("application_key", c.ApplicationKey)
 	}

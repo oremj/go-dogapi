@@ -2,10 +2,10 @@ package dogapi
 
 import "net/http"
 
-var ApiEndpoint = "https://app.datadoghq.com/api"
+var APIEndpoint = "https://app.datadoghq.com/api"
 
 type Client struct {
-	ApiKey         string
+	APIKey         string
 	ApplicationKey string
 
 	BaseURL string
@@ -15,9 +15,9 @@ type Client struct {
 
 func NewClient(apiKey, appKey string) *Client {
 	return &Client{
-		ApiKey:         apiKey,
+		APIKey:         apiKey,
 		ApplicationKey: appKey,
 		Client:         &http.Client{},
-		BaseURL:        ApiEndpoint,
+		BaseURL:        APIEndpoint,
 	}
 }
