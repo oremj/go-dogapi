@@ -9,10 +9,13 @@ import (
 )
 
 func (c *Client) makeJSONRequest(method, url string, body, res interface{}) error {
-	reqBody := new(bytes.Buffer)
-	err := json.NewEncoder(reqBody).Encode(body)
-	if err != nil {
-		return err
+	var reqBody *bytes.Buffer
+	if body != nil {
+		reqBody = new(bytes.Buffer)
+		err := json.NewEncoder(reqBody).Encode(body)
+		if err != nil {
+			return err
+		}
 	}
 
 	req, err := http.NewRequest(method, url, reqBody)
