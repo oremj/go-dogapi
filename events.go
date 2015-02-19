@@ -56,9 +56,9 @@ type GetEventResponse struct {
 }
 
 // GetEvent queries an event for details
-func (c *Client) GetEvent(eventId string) (*GetEventResponse, error) {
+func (c *Client) GetEvent(eventID string) (*GetEventResponse, error) {
 	resp := new(GetEventResponse)
-	err := c.makeJSONRequest("GET", c.BaseURL+"/v1/events/"+eventId, nil, resp)
+	err := c.makeJSONRequest("GET", c.BaseURL+"/v1/events/"+eventID, nil, resp)
 	return resp, err
 }
 
