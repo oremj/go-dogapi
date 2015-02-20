@@ -2,11 +2,12 @@ package dogapi
 
 // A Metric represents the metrics portion on a series POST
 type Metric struct {
-	Host   string   `json:"host"`
-	Metric string   `json:"metric"`
-	Points [][]int  `json:"points"`
-	Tags   []string `json:"tags"`
-	Type   string   `json:"type"`
+	Metric string  `json:"metric"`
+	Points [][]int `json:"points"`
+
+	Host string   `json:"host,omitempty"`
+	Tags []string `json:"tags,omitempty"`
+	Type string   `json:"type,omitempty"`
 }
 
 // A SeriesRequest is a time series request
