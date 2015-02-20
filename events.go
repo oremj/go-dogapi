@@ -4,11 +4,16 @@ import "net/url"
 
 // PostEventsRequest contains args for PostEvents
 type PostEventsRequest struct {
-	AlertType string   `json:"alert_type"`
-	Priority  string   `json:"priority"`
-	Tags      []string `json:"tags"`
-	Text      string   `json:"text"`
-	Title     string   `json:"title"`
+	Text  string `json:"text"`
+	Title string `json:"title"`
+
+	DateHappened   int      `json:"date_happened,omitempty"`
+	Priority       string   `json:"priority,omitempty"`
+	Host           string   `json:"host,omitempty"`
+	Tags           []string `json:"tags,omitempty"`
+	AlertType      string   `json:"alert_type,omitempty"`
+	AggregationKey string   `json:"aggregation_key,omitempty"`
+	SourceTypeName string   `json:"source_type_name,omitempty"`
 }
 
 // PostEventsResponse is the result of PostEvents
